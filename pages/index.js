@@ -31,11 +31,10 @@ export default function Home() {
       <Head>
         <title>Quiz - League of Legends</title>
         <meta property="og:title" content="Quiz - League of Legends" key="title"></meta>
-        <meta property="og:image" content="https://static.wikia.nocookie.net/leagueoflegends/images/a/a2/Vayne_PROJECTSkin.jpg/revision/latest/scale-to-width-down/1000?cb=20181021031451"/>
-        <meta property="og:image:type" content="image/jpeg"/>
-        <meta property="og:image:width" content="800"/>
-        <meta property="og:image:height" content="600"/>
-        
+        <meta property="og:image" content="https://besthqwallpapers.com/Uploads/27-11-2017/30756/thumb2-vayne-4k-characters-art-league-of-legends.jpg"/>
+            <meta property="og:image:type" content="imagem/png"/>
+            <meta property="og:image:width" content="800"/>
+            <meta property="og:image:height" content="600"/>  
       </Head>
       <QuizContainer>
       <QuizLogo />
