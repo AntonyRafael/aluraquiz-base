@@ -1,11 +1,13 @@
-import styled from 'styled-components'
-import db from '../db.json'
-import Widget from '../src/components/Widget'
-import Footer from '../src/components/Footer'
-import GitHubCorner from '../src/components/GitHubCorner'
-import QuizBackground from '../src/components/QuizBackground'
-import Head from 'next/head'
-import QuizLogo from '../src/components/QuizLogo'
+import React from 'react';
+import styled from 'styled-components';
+import { useRouter } from 'next/router';
+
+import db from '../db.json';
+import Widget from '../src/components/Widget';
+import Footer from '../src/components/Footer';
+import GitHubCorner from '../src/components/GitHubCorner';
+import QuizBackground from '../src/components/QuizBackground';
+import QuizLogo from '../src/components/QuizLogo';
 
 // const BackgroundImage = styled.div`
 //   background-image: url(${db.bg});
@@ -26,24 +28,39 @@ export const QuizContainer = styled.div`
 `;
 
 export default function Home() {
+  const router = useRouter();
+  const [name, setName] = React.useState('');
+  // console.log(name, setName);
+
   return (
     <QuizBackground backgroundImage={db.bg}>
-      <Head>
-        <title>Quiz - League of Legends</title>
-        <meta property="og:title" content="Quiz - League of Legends" key="title"></meta>
-        <meta property="og:image" content="https://besthqwallpapers.com/Uploads/27-11-2017/30756/thumb2-vayne-4k-characters-art-league-of-legends.jpg"/>
-            <meta property="og:image:type" content="imagem/png"/>
-            <meta property="og:image:width" content="800"/>
-            <meta property="og:image:height" content="600"/>  
-      </Head>
       <QuizContainer>
-      <QuizLogo />
+        <QuizLogo />
         <Widget>
           <Widget.Header>
             <h1>League of Legends</h1>
           </Widget.Header>
           <Widget.Content>
-            <p>Teste seus conhecimentos em League of Legends</p>
+            <form onSubmit={(event) => {
+              event.preventDefault();
+              router.push(`/quiz?name=${name}`);
+              console.log('Fiz minha submissão');
+            }}
+            >
+              <input
+                onChange={(event) => {
+                  // name = event.target.value;
+                  setName(event.target.value);
+                  // State, propiedade que e modificada do meu
+                  // componente para saber se sera renderizado novamente
+                }}
+                placeholder="Digite seu nome:"
+              />
+              <button type="submit" disabled={name.length === 0}>
+                <span>Jogar </span>
+                {name}
+              </button>
+            </form>
           </Widget.Content>
         </Widget>
         <Widget>
@@ -54,7 +71,7 @@ export default function Home() {
         </Widget>
         <Footer />
       </QuizContainer>
-      <GitHubCorner  projectUrl="https://github.com/AntonyRafael"/>
+      <GitHubCorner projectUrl="https://github.com/AntonyRafael" />
     </QuizBackground>
   );
 }
