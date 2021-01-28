@@ -79,7 +79,7 @@ function LoadingWidget() {
   );
 }
 
-function resultWidget() {
+function ResultWidget() {
   return (
     <Widget>
       <Widget.Header>
@@ -136,7 +136,7 @@ export default function QuizPage() {
 
         {screenState === screenStates.LOADING && <LoadingWidget />}
 
-        {screenState === screenStates.RESULT && <resultWidget />}
+        {screenState === screenStates.RESULT && <ResultWidget />}
       </QuizContainer>
     </QuizBackground>
   );
