@@ -41,7 +41,8 @@
     }
   ],
   "external": [
-    ""
+    "https://bladequiz.vercel.app",
+    "https://quiz-beta.vercel.app"
   ],
   "theme": {
     "colors": {
