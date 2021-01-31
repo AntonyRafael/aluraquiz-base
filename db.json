@@ -28,7 +28,7 @@
       ]
     },
     {
-      "image": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vayne_0.jpg",
+      "image": "https://thumbs.gfycat.com/MiserlySociableEuropeanfiresalamander.webp",
       "title": "Por que Vayne começou a caçar monstros ?",
       "description": "Agora eu quero ver",
       "answer": 1,
@@ -38,11 +38,35 @@
          "encontrar e destruir o monstro que assassinou seu esposo",
          "Ela era uma caçadora de recompensas, caçava por dinheiro"
       ]
+    },
+    {
+      "image": "https://media.tenor.com/images/9396a774777b47034c85d93a49343c10/tenor.gif",
+      "title": "Na lore do jogo quem é a irmã da Kayle ?",
+      "description": "Também conhecida como 'o anjo caido'",
+      "answer": 3,
+      "alternatives": [
+         "Katarina",
+         "Zoe",
+         "Soraka",
+         "Morgana"
+      ]
+    },
+    {
+      "image": "https://media.tenor.com/images/2e4ad689f3adcdf06e80faa081c86464/tenor.gif",
+      "title": "Qual o nome da força especial de escoteiros que teemo participa",
+      "description": "Se você joga de teemo, para por favor.",
+      "answer": 0,
+      "alternatives": [
+         "Escoteiros da Matriarca",
+         "Escoteiros da Bandópolis",
+         "Escoteiros de Guerra",
+         "Escoteiros de Megling"
+      ]
     }
   ],
   "external": [
-    "https://bladequiz.vercel.app",
-    "https://quiz-beta.vercel.app"
+    "https://aluraquiz-base.alura-challenges.vercel.app/",
+    "https://bitter-brewing-quiz.afuscella.vercel.app/"
   ],
   "theme": {
     "colors": {
