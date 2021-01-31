@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
 import db from '../../db.json';
-import { motion } from 'framer-motion'; 
 
 import Button from '../../src/components/Button';
 import QuizContainer from '../../src/components/QuizContainer';
@@ -13,6 +13,8 @@ import Widget from '../../src/components/Widget';
 import Loading from '../../src/components/Loading';
 import ResultQuestion from '../../src/components/ResultQuestion';
 import BackLinkArrow from '../../src/components/BackLinkArrow';
+import ResultLi from '../../src/components/ResultLi';
+import GitHubCorner from '../../src/components/GitHubCorner';
 
 function QuestionWidget({
   question,
@@ -120,12 +122,15 @@ function ResultWidget({ results }) {
   return (
     <Widget>
       <Widget.Header>
-        Resultado do(a):
-        {' '}
-        {router.query.name}
+        <ResultLi>
+          Resultado do(a):
+          {' '}
+          {router.query.name}
+        </ResultLi>
+
       </Widget.Header>
       <Widget.Content>
-        <p>
+        <Widget.Topic>
           Você acertou
           {' '}
           {results.reduce((somatoriaAtual, resultAtual) => {
@@ -141,19 +146,22 @@ function ResultWidget({ results }) {
           {' '}
           {db.questions.length}
           !
-        </p>
+        </Widget.Topic>
         <ul>
           {results.map((result, index) => (
-            <li key={`result_${result}`}>
+
+            <ResultLi key={`result_${result}`}>
               #
               {index + 1}
               {' '}
-              Resultado:
-              {result === true ? 'Acertou' : 'Errou'}
-            </li>
+              {result === true ? 'Correto ✅' : `Errou ❌ Alternativa correta: ${db.questions[index].answer + 1} `}
+            </ResultLi>
+
           ))}
         </ul>
       </Widget.Content>
+      <GitHubCorner projectUrl="https://github.com/AntonyRafael" />
+
     </Widget>
   );
 }
@@ -214,6 +222,8 @@ export default function QuizPage() {
 
         {screenState === screenStates.RESULT && <ResultWidget results={results} />}
       </QuizContainer>
+      <GitHubCorner projectUrl="https://github.com/AntonyRafael" />
+
     </QuizBackground>
   );
 }
