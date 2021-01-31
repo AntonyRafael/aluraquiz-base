@@ -41,7 +41,7 @@
     }
   ],
   "external": [
-    "https://bladequiz.vercel.app",
+    "https://aluraquiz-base.alura-challenges.vercel.app/",
     "https://quiz-beta.vercel.app"
   ],
   "theme": {

@@ -1,16 +1,18 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { useRouter } from 'next/router';
-import db from '../db.json';
+import db from '../../db.json';
+import { motion } from 'framer-motion'; 
 
-import Button from '../src/components/Button';
-import QuizContainer from '../src/components/QuizContainer';
-import QuizBackground from '../src/components/QuizBackground';
-import QuizLogo from '../src/components/QuizLogo';
-import AlternativesForm from '../src/components/AlternativesForm';
-import Widget from '../src/components/Widget';
-import Loading from '../src/components/Loading';
-import ResultQuestion from '../src/components/ResultQuestion';
+import Button from '../../src/components/Button';
+import QuizContainer from '../../src/components/QuizContainer';
+import QuizBackground from '../../src/components/QuizBackground';
+import QuizLogo from '../../src/components/QuizLogo';
+import AlternativesForm from '../../src/components/AlternativesForm';
+import Widget from '../../src/components/Widget';
+import Loading from '../../src/components/Loading';
+import ResultQuestion from '../../src/components/ResultQuestion';
+import BackLinkArrow from '../../src/components/BackLinkArrow';
 
 function QuestionWidget({
   question,
@@ -28,7 +30,7 @@ function QuestionWidget({
   return (
     <Widget>
       <Widget.Header>
-        {/* <BackLinkArrow href="/" /> */}
+        <BackLinkArrow href="/" />
         <h3>
           {`Pergunta ${questionIndex + 1} de ${totalQuestions}`}
         </h3>
